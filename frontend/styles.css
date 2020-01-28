@@ -8,13 +8,13 @@ body {
    }
    
    p {
-    color: aquamarine;
+    color: yellow;
     font-family: verdana;
     font-size: 20px;
     
    }
    span {
        font-size: 50px;
-       color: royalblue;
+       color: yellow;
    }
    
