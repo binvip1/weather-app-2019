@@ -1,0 +1,20 @@
+body {
+    background-color: blue;
+   }
+   
+   h1 {
+    color: white;
+    text-align: center;
+   }
+   
+   p {
+    color: aquamarine;
+    font-family: verdana;
+    font-size: 20px;
+    
+   }
+   span {
+       font-size: 50px;
+       color: royalblue;
+   }
+   
