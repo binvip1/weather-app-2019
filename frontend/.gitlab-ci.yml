@@ -1,5 +1,5 @@
 variables:
-    REMOTE_HOST: deploy@YOUR_OWN_HOSTNAME #(check from Tabula "VM list")
+    REMOTE_HOST: deploy@bowd20 #(check from Tabula "VM list")
     REMOTE_DIR: app
   
   stages:
