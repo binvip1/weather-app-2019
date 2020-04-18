@@ -40,59 +40,6 @@ weather.get(apiPath, async (ctx) => {
   }
 });
 
-// get last 50
-weather.get(weatherPath, async (ctx) => {
-    const client = await pool.connect();
-    try {
-      const sql=`SELECT device_id, date_time, data from weather ORDER BY id DESC LIMIT 50`;
-      const data = await client.query(sql);
-      ctx.type = 'application/json; charset=utf-8';
-      ctx.body = data.rows;
-    } catch (error) {
-      console.error('Error occurred:', error);
-      ctx.throw(500, error);
-    } finally {
-      client.release(); // release client back to pool
-    }
-  });
-
-  // get lastest
-weather.get(`${weatherPath}/latest`, async (ctx) => {
-  const client = await pool.connect();
-  try {
-    const sql=`SELECT device_id, date_time, data from weather ORDER BY id DESC LIMIT 1`;
-    const data = await client.query(sql);
-    ctx.type = 'application/json; charset=utf-8';
-    ctx.body = data.rows;
-  } catch (error) {
-    console.error('Error occurred:', error);
-    ctx.throw(500, error);
-  } finally {
-    client.release(); // release client back to pool
-  }
-});
-
-// insert new data
-weather.post(weatherPath, koaBody, async (ctx) => {
-  const { device_id } = ctx.request.body;
-  const data = ctx.request.body.data;
-
-  const sql = 'INSERT INTO weather(device_id, data) VALUES($1, $2)';
-  const values = [device_id, data];
-
-  const client = await pool.connect();
-  try {
-    await client.query(sql, values);
-    ctx.type = 'application/json; charset=utf-8';
-    ctx.status = 201;
-  } catch (error) {
-    console.error('Error occurred:', error);
-    ctx.throw(500, error);
-  } finally {
-    client.release(); // release client back to pool
-  }
-});
-
 app.use(weather.routes());
 app.use(weather.allowedMethods());
 
