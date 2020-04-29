@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather app - Free choice signal</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous">
+    </head>
+
+	<body>
+		
+		<div id="navbar-element"></div>
+		
+
+		<h3>Free choice</h3>
+
+		<br /><br />
+
+		<scan>Choose a measurement</scan>
+		<select id="features">
+		  <option value="temperature">Temperature</option>
+		  <option value="wind_speed">Wind speed</option>
+			<option value="wind_direction">Wind direction</option>
+		  <option value="humidity_in">Humidity in</option>
+		  <option value="humidity_out">Humidity out</option>
+			<option value="light">Light</option>
+			<option value="rain">Rain</option>
+		</select>
+
+		<br /><br /><br />
+
+		<scan>Choose a time interval</scan>
+		<select id="time_interval">
+		  <option value="">Live</option> <!-- Now -->
+		  <option value="24">24 hours</option> <!-- 24 hours -->
+		  <option value="48">48 hours</option> <!-- 48 hours -->
+		  <option value="72">72 hours</option> <!-- 72 hours -->
+			<option value="168">1 week</option> <!-- 1 week = 7 days = 168 hours -->
+			<option value="720">1 month</option> <!-- 1 month = 30 days = 720 hours -->
+		</select>
+
+		<br /><br /><br />
+
+		<scan>Choose a graph type</scan>
+		<select id="graph_type">
+		  <option value="line">Line</option>
+		  <option value="bar">Bar</option>
+		</select>
+
+		<br /><br /><br />
+
+		<button id="update" type="button">Update</button>
+
+		<div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+		<div class="container">
+			<canvas id="graph"></canvas>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@1.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="common.js"></script>
+        <script src="free_choice_signal.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	</body>
+</html>

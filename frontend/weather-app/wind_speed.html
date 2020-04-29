@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather app - Wind speed</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+  <body>
+    <!-- NAVBAR BEGINS -->
+    <div id="navbar-element"></div>
+    <!-- NAVBAR ENDS -->
+    <h3>Weather app - Wind speed</h3>
+    <br /><br />
+
+    <scan>Choose a time interval</scan>
+		<select id="time_interval">
+      <option value="latest">Latest</option> <!-- Now -->
+      <option value="">Live</option> <!-- Now -->
+		  <option value="24">24 hours</option> <!-- 24 hours -->
+		  <option value="48">48 hours</option> <!-- 48 hours -->
+		  <option value="72">72 hours</option> <!-- 72 hours -->
+			<option value="168">1 week</option> <!-- 1 week = 7 days = 168 hours -->
+			<option value="720">1 month</option> <!-- 1 month = 30 days = 720 hours -->
+		</select>
+
+    <br /><br /><br />
+		<button id="update" type="button">Update</button>
+
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@1.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="common.js"></script>
+    <script src="wind_speed.js"></script>
+  </body>
+</html>
