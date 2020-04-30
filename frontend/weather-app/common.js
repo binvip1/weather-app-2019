@@ -19,6 +19,9 @@ const navbarHtml = `
       <li class="nav-item">
       <a class="nav-link" href="/free_choice_signal.html">Free Choice Signal</a>
       </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/light.html">Light</a>
+      </li>
     </ul>
 </nav>
 `;
